@@ -1,1 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Khaled Elgafarey | Digital Profile</title>
+
+    <meta name="description"
+          content="Khaled Elgafarey - Electronics Student">
+
+    <meta name="theme-color" content="#0b0f19">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top, #1d3150 0%, #0b0f19 45%, #05070b 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 25px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        /* Card */
+
+        .profile-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 28px;
+            padding: 30px 20px;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.45);
+            animation: fadeIn 0.8s ease;
+        }
+
+        /* Profile Image */
+
+        .profile-image {
+            width: 135px;
+            height: 135px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, #00eaff, #7b61ff, #00ffa3);
+            box-shadow: 0 0 35px rgba(0,234,255,0.35);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #0b0f19;
+        }
+
+        /* Name */
+
+        .name-ar {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 800;
+            margin-top: 5px;
+        }
+
+        .name-en {
+            text-align: center;
+            font-size: 18px;
+            color: #00eaff;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        .bio {
+            text-align: center;
+            color: #c8d0dc;
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 18px 5px 25px;
+        }
+
+        /* Buttons */
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 15px 18px;
+            border-radius: 16px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.08);
+            transition: 0.25s ease;
+        }
+
+        .link-button:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.14);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        .link-button:active {
+            transform: scale(0.97);
+        }
+
+        .icon {
+            font-size: 22px;
+        }
+
+        /* Save Contact */
+
+        .save-contact {
+            margin-top: 18px;
+            background: linear-gradient(135deg, #00d9ff, #6c63ff);
+            border: none;
+            cursor: pointer;
+        }
+
+        .save-contact:hover {
+            background: linear-gradient(135deg, #12e4ff, #8179ff);
+        }
+
+        /* Divider */
+
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin: 25px 0;
+        }
+
+        /* Social */
+
+        .social-title {
+            text-align: center;
+            color: #aeb8c7;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .social {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 21px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: 0.25s;
+        }
+
+        .social:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* Footer */
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #7f8a9a;
+            font-size: 12px;
+        }
+
+        .nfc {
+            margin-top: 7px;
+            color: #00eaff;
+            font-size: 12px;
+        }
+
+        /* Animation */
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile */
+
+        @media (max-width: 400px) {
+
+            .profile-card {
+                padding: 25px 15px;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .name-ar {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="profile-card">
+
+        <!-- Profile Image -->
+
+        <div class="profile-image">
+            <img
+                src="https://videotourl.com/images/1787775630338-0517fd8b-1b2c-466a-b1e3-8c9c5800c21d.jpg"
+                alt="Khaled Elgafarey">
+        </div>
+
+        <!-- Name -->
+
+        <h1 class="name-ar">
+            خالد الجعفري
+        </h1>
+
+        <div class="name-en">
+            Khaled Elgafarey
+        </div>
+
+        <!-- Bio -->
+
+        <p class="bio">
+            طالب بأكاديمية السويدي الفنية
+            <br>
+            قسم الإلكترونيات ⚡
+        </p>
+
+        <!-- Main Links -->
+
+        <div class="links">
+
+            <!-- WhatsApp -->
+
+            <a
+                class="link-button"
+                href="https://wa.me/201010474002"
+                target="_blank">
+                <span class="icon">💬</span>
+                WhatsApp
+            </a>
+
+            <!-- Facebook -->
+
+            <a
+                class="link-button"
+                href="https://www.facebook.com/share/1C6KMp8SJZ/"
+                target="_blank">
+                <span class="icon">📘</span>
+                Facebook
+            </a>
+
+            <!-- Instagram -->
+
+            <a
+                class="link-button"
+                href="https://www.instagram.com/khaledelgafarey_?igsi=MTgzajVzd2RibzJhZQ=="
+                target="_blank">
+                <span class="icon">📸</span>
+                Instagram
+            </a>
+
+            <!-- TikTok -->
+
+            <a
+                class="link-button"
+                href="https://www.tiktok.com/@khaledelgafarey0?_r=1&_t=ZS-99DJN9cPwxT"
+                target="_blank">
+                <span class="icon">🎵</span>
+                TikTok
+            </a>
+
+            <!-- Personal Website -->
+
+            <a
+                class="link-button"
+                href="https://mlthnrgev-cell.github.io/Eng-Khaled-Elgafarey-/index.html"
+                target="_blank">
+                <span class="icon">🌐</span>
+                موقعي الشخصي
+            </a>
+
+        </div>
+
+        <!-- Divider -->
+
+        <div class="divider"></div>
+
+        <!-- Save Contact -->
+
+        <button
+            class="link-button save-contact"
+            onclick="saveContact()">
+            <span class="icon">💾</span>
+            حفظ بياناتي في جهات الاتصال
+        </button>
+
+        <!-- Social Icons -->
+
+        <div class="divider"></div>
+
+        <div class="social-title">
+            تابعني على منصات التواصل
+        </div>
+
+        <div class="socials">
+
+            <a
+                class="social"
+                href="https://www.facebook.com/share/1C6KMp8SJZ/"
+                target="_blank">
+                📘
+            </a>
+
+            <a
+                class="social"
+                href="https://www.instagram.com/khaledelgafarey_?igsi=MTgzajVzd2RibzJhZQ=="
+                target="_blank">
+                📸
+            </a>
+
+            <a
+                class="social"
+                href="https://www.tiktok.com/@khaledelgafarey0?_r=1&_t=ZS-99DJN9cPwxT"
+                target="_blank">
+                🎵
+            </a>
+
+        </div>
+
+        <div class="footer">
+            © 2026 Khaled Elgafarey
+        </div>
+
+        <div class="nfc">
+            📡 NFC Digital Profile
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function saveContact() {
+
+    const vCard =
+`BEGIN:VCARD
+VERSION:3.0
+FN:Khaled Elgafarey
+N:Elgafarey;Khaled;;;
+TEL;TYPE=CELL:01010474002
+URL:https://mlthnrgev-cell.github.io/Eng-Khaled-Elgafarey-/index.html
+URL;TYPE=Facebook:https://www.facebook.com/share/1C6KMp8SJZ/
+URL;TYPE=Instagram:https://www.instagram.com/khaledelgafarey_
+URL;TYPE=TikTok:https://www.tiktok.com/@khaledelgafarey0
+NOTE:Electronics Student - Al-Suwaidi Technical Academy
+END:VCARD`;
+
+    const blob = new Blob(
+        [vCard],
+        { type: "text/vcard;charset=utf-8" }
+    );
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+
+    a.href = url;
+    a.download = "Khaled-Elgafarey.vcf";
+
+    document.body.appendChild(a);
+
+    a.click();
+
+    document.body.removeChild(a);
+
+    URL.revokeObjectURL(url);
+}
+
+</script>
+
+</body>
+</html>
